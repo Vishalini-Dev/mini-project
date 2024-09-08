@@ -66,6 +66,7 @@ function memorySub() {
 function memoryClear() {
     memory = 0;
     localStorage.removeItem('memory');
+    alert('Clear memory');
     clearDisplay();
 }
 
