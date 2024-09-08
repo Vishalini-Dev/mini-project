@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            text-align: center;
+            margin-top: 180px;
+            background-color: rgb(113, 165, 165);
+        }
+        #calculator {
+            display: inline-block;
+            width: 310px;
+            height: 400px;
+            background-color: rgb(53, 53, 51);
+            border-radius: 10px;
+            padding-top: 50px;
+        }
+        #display {
+            height: 50px;
+            text-align: right;
+            font-size: 24px;
+        }
+        .row{
+            margin-top: 20px;
+        }
+        .btn {
+            width: 55px;
+            margin-left: 5px;
+            border-radius: 10px;
+        }
+        #equal, #ac {
+            width: 115px;
+        }
+        @media (max-width: 480px) {
+            body {
+                text-align: center;
+                margin-top: 100px;
+
+            }
+            #calculator {
+                max-width: 250px;
+                height: auto;
+                padding-top: 20px;
+            }
+            .btn {
+                width: 45px;
+                margin-left: 4px;
+                border-radius: 10px;
+            }
+            #equal,#ac {
+                width: 90px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="calculator" class="container">
+        <input type="text" id="display" class="form-control mb-3" readonly>
+        <div class="row">
+            <button class="btn btn-danger" id="ac" onclick="clearDisplay()">AC</button>
+            <button class="btn btn-secondary" onclick="deleteLast()">DE</button>
+            <button class="btn btn-warning" onclick="appendValue('%')">%</button>
+            <button class="btn btn-warning" onclick="appendValue('/')">/</button>
+        </div>
+        <div class="row">
+            <button class="btn btn-secondary" onclick="memoryClear()">MC</button>
+            <button class="btn btn-light" onclick="appendValue('7')">7</button>
+            <button class="btn btn-light" onclick="appendValue('8')">8</button>
+            <button class="btn btn-light" onclick="appendValue('9')">9</button>
+            <button class="btn btn-warning" onclick="appendValue('*')">*</button>
+
+        </div>
+        <div class="row">
+            <button class="btn btn-secondary" onclick="memorySub()">M-</button>
+            <button class="btn btn-light" onclick="appendValue('4')">4</button>
+            <button class="btn btn-light" onclick="appendValue('5')">5</button>
+            <button class="btn btn-light" onclick="appendValue('6')">6</button>
+            <button class="btn btn-warning" onclick="appendValue('-')">-</button>
+
+        </div>
+        <div class="row">
+            <button class="btn btn-secondary" onclick="memoryAdd()">M+</button>
+            <button class="btn btn-light" onclick="appendValue('1')">1</button>
+            <button class="btn btn-light" onclick="appendValue('2')">2</button>
+            <button class="btn btn-light" onclick="appendValue('3')">3</button>
+            <button class="btn btn-warning" onclick="appendValue('+')">+</button>
+
+        </div>
+        <div class="row">
+            <button class="btn btn-light" onclick="appendValue('00')">00</button>
+            <button class="btn btn-light" onclick="appendValue('0')">0</button>
+            <button class="btn btn-light" onclick="appendValue('%')">%</button>
+            <button class="btn btn-success" id="equal" onclick="calculate()">=</button>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
